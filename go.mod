@@ -1,5 +1,5 @@
 module github.com/carryon/gmsm
 
-go 1.12
+go 1.13
 
-require golang.org/x/crypto v0.0.0-20191219195013-becbf705a915
+require golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9
