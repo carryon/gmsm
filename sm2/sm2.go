@@ -27,10 +27,10 @@ import (
 	"encoding/asn1"
 	"encoding/binary"
 	"errors"
+	"github.com/carryon/gmsm/pkcs12"
+	"github.com/carryon/gmsm/sm3"
 	"io"
 	"math/big"
-
-	"github.com/tjfoc/gmsm/sm3"
 )
 
 var (
@@ -635,4 +635,12 @@ func Decompress(a []byte) *PublicKey {
 		X:     x,
 		Y:     y,
 	}
+}
+
+func MarshalECPrivateKey(key *PrivateKey) ([]byte, error) {
+	return pkcs12.MarshalECPrivateKey(key)
+}
+
+func MarshalPrivateKey(key *PrivateKey, oid asn1.ObjectIdentifier)([]byte,error) {
+	return pkcs12.MarshalPrivateKey(key, oid)
 }
