@@ -30,6 +30,7 @@ import (
 	"io"
 	"math/big"
 
+	"github.com/tjfoc/gmsm/pkcs12"
 	"github.com/tjfoc/gmsm/sm3"
 )
 
@@ -635,4 +636,12 @@ func Decompress(a []byte) *PublicKey {
 		X:     x,
 		Y:     y,
 	}
+}
+
+func MarshalECPrivateKey(key *PrivateKey) ([]byte, error) {
+	return pkcs12.MarshalECPrivateKey(key)
+}
+
+func MarshalPrivateKey(key *PrivateKey, oid asn1.ObjectIdentifier)([]byte,error) {
+	return pkcs12.MarshalPrivateKey(key, oid)
 }
