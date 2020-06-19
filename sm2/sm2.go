@@ -30,8 +30,8 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/tjfoc/gmsm/pkcs12"
-	"github.com/tjfoc/gmsm/sm3"
+	"github.com/carryon/gmsm/pkcs12"
+	"github.com/carryon/gmsm/sm3"
 )
 
 var (
